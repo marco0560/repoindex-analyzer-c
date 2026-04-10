@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "repoindex-analyzer-c"
-version = "0.1.0"
+version = "2.0.0"
 description = "First-party C-family analyzer plugin for repoindex"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "repoindex",
+    "repoindex>=2.0.0,<3.0.0",
     "tree-sitter>=0.25.2",
     "tree-sitter-c>=0.24.1",
 ]
@@ -30,3 +30,15 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py313"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
